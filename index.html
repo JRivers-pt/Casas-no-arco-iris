@@ -2,6 +2,17 @@
 <html lang="pt-pt" class="scroll-smooth">
 
 <head>
+    <!-- Google Tag Manager / Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-KMP3SBJZ"></script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KMP3SBJZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GTM-KMP3SBJZ');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casas no Arco-íris | Remodelações e Instalações</title>
@@ -72,6 +83,10 @@
 </head>
 
 <body class="bg-slate-50 text-slate-600 font-sans antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMP3SBJZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="fixed inset-0 z-0 opacity-80 pointer-events-none bg-blueprint bg-cover bg-center bg-no-repeat mix-blend-multiply"></div>
 
@@ -361,6 +376,22 @@
                 }
 
                 const targetEndpoint = atob("aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4TUlfdVR1OUVhMmlxYURMRVpLcHdZa0RtbnV1SmN3eTJ2WVpkWmh1S0tWd2I0LWx4NTJFNXBwT2NoX1RZdy1uQ04vZXhlYw==");
+
+                // Register conversion event in GA4 & GTM
+                try {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            event_category: 'Contact',
+                            event_label: 'Pedido de Orçamento'
+                        });
+                    }
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            event: 'form_submission',
+                            form_name: 'Orcamento'
+                        });
+                    }
+                } catch(err) {}
 
                 const forwardForm = () => {
                     if (isDispatched) return;
